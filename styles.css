@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+  position: absolute;
+}
+nav ul li a{
+  color: var(--White);
+  text-decoration: none;
+}
+.nav-slide-1,
+.nav-slide-2,
+.nav-slide-3 {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.nav-img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.nav ul li hr {
+  border-top: 2px solid var(--White);
+  border-radius: 5px;
+  width: 40%;
+  opacity: 0;
+  margin-top: 5px;
+  margin-left: 10px;
+  transition: all ease-out 0.3s;
+}
+.nav ul li:hover hr {
+  margin-left: 2px;
+  opacity: 90%;
+  width: 90%;
+}
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 30px 0 0;
+}
+.nav-content h1 {
+  line-height: 1.2;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+.nav-content p {
+  color: var(--Dark-Gray);
+  line-height: 1.4;
+}
+.nav-content div > h4 {
+  /* margin-top: 20px; */
+  letter-spacing: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all ease-out 0.3s;
+  margin-bottom: 10px;
+}
+.nav-content div > h4:hover {
+  color: var(--Dark-Gray);
+}
+.nav-content h1,
+.nav-content p,
+.nav-content h4 {
+  padding: 30px 30px 0 30px;
+}
+.nav-slide-2,
+.nav-slide-3 {
+  display: none;
+}
+.btn {
+  display: flex;
+  margin-top: auto;
+}
+.prev,
+.next {
+  background-color: var(--Black);
+  height: 70px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease-out 0.3s;
+}
+.prev:hover,
+.next:hover {
+  background-color: var(--Dark-Gray);
+}
+
+.sideBar nav ul {
+  display: flex;
+  justify-content: space-around;
+  color: var(--Black);
+  z-index: 999;
+  background-color: var(--White);
+  height: 70px;
+  width: 100%;
+  transform: translateY(-100px);
+  transition: all 0.7s ease-out;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.footer-content {
+  padding: 40px;
+  padding-bottom: 0;
+}
+.footer-content h3 {
+  padding: 0 10px 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.footer-content p {
+  color: var(--Dark-Gray);
+  line-height: 1.4;
+}
+.footer-img-1 img,
+.footer-img-2 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.show {
+  display: none;
+}
+.smallScreen {
+  display: none;
+}
+@media (max-width: 900px) {
+  .show {
+    display: block;
+  }
+  .hideBar {
+    display: none;
+  }
+  .nav-slide-1,
+  .nav-slide-2,
+  .nav-slide-3 {
+    grid-template-columns: 1fr;
+  }
+  .smallScreen {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+  .prev,.next{
+    background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+  }
+  .btn img{
+    fill: var(--Black);
+  }
+  .prev:hover,.next:hover{
+    background-color: var(--Very-Dark-Gray);
+  }
+  .footer{
+    grid-template-columns: 1fr;
+  }
+}
